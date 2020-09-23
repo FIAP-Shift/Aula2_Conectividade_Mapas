@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shift_a2_mapas_conec/model/listPositions.dart';
 import 'package:flutter_shift_a2_mapas_conec/model/position.dart';
 import 'package:flutter_shift_a2_mapas_conec/service/endpoints.dart';
+import 'package:flutter_shift_a2_mapas_conec/widgets/listItem.dart';
 
 class ListCars extends StatefulWidget {
 
@@ -59,7 +60,7 @@ class _ListCarsState extends State<ListCars> {
   }
 
   Widget buildListItem(Position position){
-    return Text(position.condutor_nome); // ListItemVehicle(position);
+    return ListItemCar(position);
   }
 
 }
