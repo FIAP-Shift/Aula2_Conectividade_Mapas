@@ -32,6 +32,19 @@ class _ListCarsState extends State<ListCars> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Carros"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.map),
+            onPressed: () {
+              //usando passagem de parâmetros via argumentos
+              Navigator.pushNamed(
+                  context,
+                  "/mapa",
+                  arguments: listPositions);
+            },
+          ),
+        ],
+
       ),
       body: listPositions == null ? LinearProgressIndicator() :
       ListView.separated(
