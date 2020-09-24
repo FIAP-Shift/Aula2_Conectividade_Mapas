@@ -57,10 +57,60 @@ class _ListItemCarState extends State<ListItemCar> {
           color: Colors.lightBlue,
           foregroundColor: Colors.white,
           icon: Icons.archive,
-          onTap: () {},
+          onTap: () {
+            showBottomSheet();
+          },
         ),
       ],
     );
+  }
+
+  void showBottomSheet(){
+    showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8),
+                        child: Icon(Icons.headset_off)),
+                      Text("Desliga alto-falantes")
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: Icon(Icons.highlight),
+                      ),
+                      Text("Ligar farol de milha")
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: Icon(Icons.power_settings_new),
+                      ),
+                      Text("Liga/Desliga contato")
+                    ],
+                  ),
+                )
+              ],
+            )
+          );
+    });
   }
 
   Widget buildChildSlidable() => InkWell(
